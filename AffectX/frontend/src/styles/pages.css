@@ -1,0 +1,372 @@
+/* Consistent Page Styling for All Modules */
+
+/* Page Containers */
+.face-detection-container,
+.voice-analysis-container,
+.text-analysis-container,
+.emotion-fusion-container,
+.emotion-timeline-container,
+.profile-container,
+.settings-container,
+.wellness-container {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #f8f9fa 0%, #eef2f5 100%);
+}
+
+/* Page Navbar Styling */
+.face-detection-container .navbar,
+.voice-analysis-container .navbar,
+.text-analysis-container .navbar,
+.emotion-fusion-container .navbar,
+.emotion-timeline-container .navbar,
+.profile-container .navbar,
+.settings-container .navbar,
+.wellness-container .navbar {
+  background: white;
+  color: #0f172a;
+  padding: 16px 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(102, 126, 234, 0.1);
+}
+
+/* Page Navbar Content */
+.face-detection-container .navbar-content,
+.voice-analysis-container .navbar-content,
+.text-analysis-container .navbar-content,
+.emotion-fusion-container .navbar-content,
+.emotion-timeline-container .navbar-content,
+.profile-container .navbar-content,
+.settings-container .navbar-content,
+.wellness-container .navbar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  width: 100%;
+}
+
+/* Page Navbar Logo */
+.face-detection-container .navbar h1,
+.voice-analysis-container .navbar h1,
+.text-analysis-container .navbar h1,
+.emotion-fusion-container .navbar h1,
+.emotion-timeline-container .navbar h1,
+.profile-container .navbar h1,
+.settings-container .navbar h1,
+.wellness-container .navbar h1 {
+  font-size: 24px;
+  margin: 0;
+  /* background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.face-detection-container .navbar h1:hover,
+.voice-analysis-container .navbar h1:hover,
+.text-analysis-container .navbar h1:hover,
+.emotion-fusion-container .navbar h1:hover,
+.emotion-timeline-container .navbar h1:hover,
+.profile-container .navbar h1:hover,
+.settings-container .navbar h1:hover,
+.wellness-container .navbar h1:hover {
+  opacity: 0.8;
+}
+
+/* Nav Links */
+.nav-links {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.nav-links a {
+  color: #333;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.nav-links a:hover {
+  color: #0d1124;
+  padding-bottom: 4px;
+  border-bottom: 2px solid #667eea;
+}
+
+/* Logout Button */
+.btn-logout {
+  background: rgba(102, 126, 234, 0.1);
+  color: #c3cbec;
+  padding: 8px 16px;
+  border: 1px solid rgba(102, 126, 234, 0.2);
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 13px;
+  transition: all 0.3s ease;
+}
+
+.btn-logout:hover {
+  background: rgba(102, 126, 234, 0.2);
+  border-color: #667eea;
+  cursor: pointer;
+}
+
+.btn-logout:active {
+  transform: scale(0.98);
+}
+
+/* Page Content Areas */
+.detection-content,
+.voice-content,
+.text-content,
+.fusion-content,
+.timeline-content,
+.profile-content,
+.settings-content,
+.wellness-content {
+  max-width: 1400px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.detection-content h2,
+.voice-content h2,
+.text-content h2,
+.fusion-content h2,
+.timeline-content h2,
+.profile-content h2,
+.settings-content h2,
+.wellness-content h2 {
+  font-size: 32px;
+  color: #333;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.subtitle {
+  color: #888;
+  margin-bottom: 40px;
+  font-size: 16px;
+}
+
+/* Cards and Sections */
+.detection-panel,
+.voice-panel,
+.text-panel,
+.video-section,
+.recording-section,
+.voice-results,
+.emotion-display,
+.chart-container {
+  background: white;
+  padding: 28px 30px;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.detection-panel:hover,
+.voice-panel:hover,
+.text-panel:hover,
+.video-section:hover,
+.recording-section:hover,
+.voice-results:hover,
+.emotion-display:hover,
+.chart-container:hover {
+  box-shadow: 0 8px 24px rgba(102, 126, 234, 0.1);
+}
+
+/* Buttons */
+.btn-primary,
+.btn-secondary,
+.btn-analyze,
+.btn-save,
+.btn-reset {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-size: 14px;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.btn-primary:hover:not(:disabled) {
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background: #e74c3c;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background: #c0392b;
+}
+
+.btn-analyze {
+  background: #27ae60;
+  color: white;
+}
+
+.btn-analyze:hover:not(:disabled) {
+  background: #229954;
+}
+
+.btn-save {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.btn-save:hover {
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.btn-reset {
+  background: #95a5a6;
+  color: white;
+}
+
+.btn-reset:hover {
+  background: #7f8c8d;
+}
+
+/* Input Fields */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea,
+select {
+  padding: 10px 12px;
+  border: 1px solid rgba(102, 126, 234, 0.2);
+  border-radius: 8px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+/* Stat Cards in Pages */
+.stat-card {
+  background: white;
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  text-align: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-left: 5px solid #667eea;
+}
+
+.stat-card:hover {
+  box-shadow: 0 8px 24px rgba(102, 126, 234, 0.15);
+  transform: translateY(-4px);
+  border-left-color: #764ba2;
+}
+
+.stat-card h3 {
+  color: #333;
+  margin-bottom: 15px;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.stat-value {
+  font-size: 32px;
+  font-weight: 700;
+  color: #667eea;
+  margin: 0;
+}
+
+/* Lists and Tables */
+.history-list,
+.emotions-table {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.history-list li,
+.table-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background: #fafbfc;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  transition: all 0.3s ease;
+  border-left: 3px solid rgba(102, 126, 234, 0.3);
+}
+
+.history-list li:hover,
+.table-row:hover {
+  background: #f0f4ff;
+  border-left-color: #667eea;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .detection-panel,
+  .voice-panel,
+  .text-panel {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .detection-content,
+  .voice-content,
+  .text-content,
+  .fusion-content,
+  .timeline-content,
+  .profile-content,
+  .settings-content,
+  .wellness-content {
+    margin: 20px auto;
+    padding: 0 16px;
+  }
+
+  .detection-content h2,
+  .voice-content h2,
+  .text-content h2,
+  .fusion-content h2,
+  .timeline-content h2,
+  .profile-content h2,
+  .settings-content h2,
+  .wellness-content h2 {
+    font-size: 24px;
+  }
+
+  .btn-primary,
+  .btn-secondary,
+  .btn-analyze,
+  .btn-save,
+  .btn-reset {
+    padding: 10px 16px;
+    font-size: 13px;
+  }
+}

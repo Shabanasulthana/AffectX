@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AffectX: Emotion Intelligence Web Application - Project Report</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: white;
+            padding: 40px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: #667eea;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #667eea;
+            font-size: 2em;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            border-left: 4px solid #667eea;
+            padding-left: 15px;
+        }
+
+        h3 {
+            color: #764ba2;
+            font-size: 1.3em;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+
+        ul, ol {
+            margin-left: 30px;
+            margin-bottom: 15px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .feature-box {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+
+        .code-block {
+            background: #f5f5f5;
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+            margin: 15px 0;
+            font-size: 0.9em;
+        }
+
+        .diagram {
+            background: #f8f9fa;
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+            font-family: monospace;
+            white-space: pre;
+            overflow-x: auto;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .grid-item {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .highlight {
+            background: #fff3cd;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #ffc107;
+            margin: 15px 0;
+        }
+
+        .success {
+            background: #d4edda;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #28a745;
+            margin: 15px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        table th {
+            background: #667eea;
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        table td {
+            padding: 10px 12px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .footer {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 2px solid #ddd;
+            text-align: center;
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .page-break {
+            page-break-after: always;
+        }
+
+        .header-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .header-box h1 {
+            color: white;
+            border: none;
+            margin-bottom: 10px;
+        }
+
+        .header-box p {
+            font-size: 1.1em;
+            margin: 0;
+        }
+
+        .feature-list {
+            list-style-type: none;
+        }
+
+        .feature-list li:before {
+            content: "✓ ";
+            color: #28a745;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        @media print {
+            body {
+                padding: 20px;
+            }
+            .page-break {
+                page-break-after: always;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+            h1 {
+                font-size: 1.8em;
+            }
+            h2 {
+                font-size: 1.4em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header-box">
+            <h1>🧠 AffectX</h1>
+            <p>Emotion Intelligence Web Application</p>
+            <p style="font-size: 0.9em; margin-top: 10px;">Comprehensive Project Report</p>
+        </div>
+
+        <!-- Executive Summary -->
+        <h2>Executive Summary</h2>
+        <p>AffectX is an advanced emotion intelligence web application that leverages artificial intelligence and machine learning to detect, analyze, and provide insights into human emotions across multiple modalities (facial expressions, voice tone, and text sentiment). The application combines cutting-edge computer vision, audio processing, and NLP techniques to deliver comprehensive emotional wellness monitoring and support.</p>
+
+        <!-- Problem Statement -->
+        <h2>Problem Statement</h2>
+        <h3>Current Challenges</h3>
+        <ol>
+            <li><strong>Lack of Holistic Emotion Detection</strong> - Traditional applications focus on single emotion detection methods (face OR voice OR text), missing the complete emotional picture.</li>
+            <li><strong>Limited Emotional Intelligence</strong> - Users lack tools to understand their emotional patterns, triggers, and trends over time.</li>
+            <li><strong>Absence of AI-Powered Support</strong> - No intelligent systems to provide personalized emotional wellness guidance based on detected emotions.</li>
+            <li><strong>Poor UX in Emotion Analysis</strong> - Existing solutions have cluttered interfaces and don't present emotion data in digestible, actionable formats.</li>
+            <li><strong>Data Persistence Gap</strong> - Users cannot track their emotional journey or access historical emotional data.</li>
+            <li><strong>Bias in Detection Models</strong> - Face detection models tend to default to "neutral" emotion, making it difficult to detect negative emotions like sadness, anger, and disgust.</li>
+        </ol>
+
+        <!-- Solution Overview -->
+        <h2>Solution Overview</h2>
+        <p>AffectX addresses these challenges by providing a comprehensive, multi-modal emotion intelligence platform:</p>
+        <ul class="feature-list">
+            <li>Multi-Modal Emotion Detection: Analyzes emotions from face, voice, and text inputs simultaneously</li>
+            <li>AI-Powered Analytics: Uses machine learning to generate insights, forecasts, and emotional intelligence metrics</li>
+            <li>Emotion-Aware Chatbot: Provides personalized emotional support conversations</li>
+            <li>Comprehensive Dashboard: Visual analytics with wellness scoring and emotional patterns</li>
+            <li>Persistent Storage: MongoDB-backed emotion history tracking</li>
+            <li>Professional UI/UX: Consistent, beautiful interface across all modules</li>
+        </ul>
+
+        <!-- Key Features -->
+        <h2>Key Features</h2>
+
+        <h3>1. 👁️ Face Detection Module</h3>
+        <div class="feature-box">
+            <ul>
+                <li>Real-time Facial Expression Analysis: Detects 7 emotions (happy, sad, angry, surprised, fearful, disgusted, neutral)</li>
+                <li>Confidence Scoring: Shows confidence level for detected emotions</li>
+                <li>Emotion Capture: One-click capture and save of detected emotion</li>
+                <li>Live Webcam Feed: Real-time visualization with smooth performance</li>
+                <li>Bias Correction: Improved detection accuracy for non-neutral emotions</li>
+            </ul>
+        </div>
+
+        <h3>2. 🎤 Voice Analysis Module</h3>
+        <div class="feature-box">
+            <ul>
+                <li>Audio Recording: Built-in microphone access with visual waveform</li>
+                <li>Real-time Visualization: Displays audio waves during recording</li>
+                <li>Advanced Acoustic Analysis: Extracts 10+ features (MFCC, ZCR, spectral centroid, energy, etc.)</li>
+                <li>Emotion Classification: Distinguishes between 7 emotion classes</li>
+                <li>Manual Save Option: Users can explicitly save detected emotions</li>
+                <li>History Tracking: Recent voice recordings with confidence scores</li>
+            </ul>
+        </div>
+
+        <h3>3. 📝 Text Analysis Module</h3>
+        <div class="feature-box">
+            <ul>
+                <li>Sentiment Analysis: Analyzes emotion from text input</li>
+                <li>Multiple Emotion Classifiers: Detects various emotions from written content</li>
+                <li>History Management: Stores and displays past text analyses</li>
+            </ul>
+        </div>
+
+        <h3>4. 🎯 Emotion Fusion Module</h3>
+        <div class="feature-box">
+            <ul>
+                <li>Cross-Modal Analysis: Combines face, voice, and text emotion data</li>
+                <li>Weighted Scoring: Intelligently combines multiple emotion sources</li>
+                <li>Fusion Insights: Shows which modality detected strongest emotion</li>
+            </ul>
+        </div>
+
+        <h3>5. 📊 Advanced Analytics Dashboard</h3>
+        <div class="feature-box">
+            <ul>
+                <li>Wellness Score: Composite metric measuring emotional well-being (0-100)</li>
+                <li>Emotional Intelligence Score: Measures emotion awareness and management</li>
+                <li>Emotional Stability Index: Tracks consistency of emotional responses</li>
+                <li>Mood Forecasting: Predicts future emotional trends based on historical data</li>
+                <li>Pattern Detection: Identifies recurring emotional patterns</li>
+                <li>AI-Generated Insights: Machine learning-powered recommendations</li>
+            </ul>
+        </div>
+
+        <h3>6. 💬 Emotion-Aware Chatbot</h3>
+        <div class="feature-box">
+            <ul>
+                <li>Emotion-Specific Responses: Tailored conversation based on detected emotion</li>
+                <li>Quick Reply Options: Pre-defined supportive messages</li>
+                <li>Coping Strategies: Time-based wellness recommendations</li>
+                <li>Affirmations: Personalized positive reinforcement</li>
+                <li>Conversational Support: Natural language understanding for user queries</li>
+            </ul>
+        </div>
+
+        <h3>7. 🔐 Authentication & Security</h3>
+        <div class="feature-box">
+            <ul>
+                <li>Secure Login: JWT-based authentication</li>
+                <li>Token Management: Automatic token refresh and validation</li>
+                <li>Protected Routes: Route guards for authenticated pages</li>
+                <li>User Profiles: Personal user data management</li>
+            </ul>
+        </div>
+
+        <div class="page-break"></div>
+
+        <!-- Technical Architecture -->
+        <h2>Technical Architecture</h2>
+
+        <h3>Technology Stack</h3>
+        <div class="grid-2">
+            <div class="grid-item">
+                <h4>Frontend</h4>
+                <ul>
+                    <li>React 18</li>
+                    <li>React Router v6</li>
+                    <li>Vite</li>
+                    <li>Axios</li>
+                    <li>Chart.js</li>
+                    <li>face-api.js</li>
+                </ul>
+            </div>
+            <div class="grid-item">
+                <h4>Backend</h4>
+                <ul>
+                    <li>Node.js</li>
+                    <li>Express.js</li>
+                    <li>MongoDB/Mongoose</li>
+                    <li>JWT Auth</li>
+                    <li>Multer</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="grid-2">
+            <div class="grid-item">
+                <h4>AI/ML Services</h4>
+                <ul>
+                    <li>Python Flask</li>
+                    <li>librosa</li>
+                    <li>scikit-learn</li>
+                    <li>NumPy</li>
+                </ul>
+            </div>
+            <div class="grid-item">
+                <h4>Infrastructure</h4>
+                <ul>
+                    <li>Docker</li>
+                    <li>Environment Config</li>
+                    <li>Port Management</li>
+                    <li>CORS</li>
+                </ul>
+            </div>
+        </div>
+
+        <h3>System Architecture</h3>
+        <div class="diagram">
+┌─────────────────────────────────────┐
+│     Frontend (React/Vite)           │
+│  ├─ Dashboard                       │
+│  ├─ Face Detection                  │
+│  ├─ Voice Analysis                  │
+│  ├─ Text Analysis                   │
+│  └─ Emotion Fusion & Analytics      │
+└────────────┬────────────────────────┘
+             │
+             ▼
+┌─────────────────────────────────────┐
+│   Backend API (Node.js/Express)     │
+│  ├─ Auth Routes                     │
+│  ├─ Emotion Routes                  │
+│  ├─ Voice Routes                    │
+│  └─ Fusion Routes                   │
+└────────────┬────────────────────────┘
+             │
+        ┌────┴─────────┐
+        ▼              ▼
+  ┌──────────┐   ┌──────────────────┐
+  │ MongoDB  │   │ AI Service       │
+  │ Database │   │ (Python/Flask)   │
+  └──────────┘   └──────────────────┘
+        </div>
+
+        <!-- Emotion Detection Algorithms -->
+        <h2>Emotion Detection Algorithms</h2>
+
+        <h3>Face Emotion Detection</h3>
+        <p>Uses pre-trained face-api.js model with facial landmark detection to classify expressions into 7 emotion categories with confidence scoring.</p>
+
+        <h3>Voice Emotion Detection</h3>
+        <p><strong>Acoustic Features Extracted:</strong></p>
+        <ul>
+            <li><strong>Spectral Centroid</strong>: Measures brightness/harshness of sound</li>
+            <li><strong>Spectral Roll-off</strong>: Frequency distribution information</li>
+            <li><strong>Energy (RMS)</strong>: Overall loudness level</li>
+            <li><strong>Chroma Features</strong>: Pitch and harmonic content</li>
+        </ul>
+
+        <p><strong>Emotion Scoring Logic:</strong></p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Emotion</th>
+                    <th>Key Characteristics</th>
+                    <th>Acoustic Profile</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Happy</strong></td>
+                    <td>Pleasant, uplifting</td>
+                    <td>High energy + Bright tone + Stable rhythm</td>
+                </tr>
+                <tr>
+                    <td><strong>Sad</strong></td>
+                    <td>Muted, withdrawn</td>
+                    <td>Low energy + Dark tone + Monotone</td>
+                </tr>
+                <tr>
+                    <td><strong>Angry</strong></td>
+                    <td>Aggressive, harsh</td>
+                    <td>High energy + Harsh noise + Unstable rhythm</td>
+                </tr>
+                <tr>
+                    <td><strong>Surprised</strong></td>
+                    <td>Sudden, variable</td>
+                    <td>Moderate energy + Bright + Variable pitch</td>
+                </tr>
+                <tr>
+                    <td><strong>Fearful</strong></td>
+                    <td>Nervous, erratic</td>
+                    <td>High noise + Unstable + Erratic</td>
+                </tr>
+                <tr>
+                    <td><strong>Disgusted</strong></td>
+                    <td>Dismissive, nasal</td>
+                    <td>Nasal quality + Dark tone + Low energy</td>
+                </tr>
+                <tr>
+                    <td><strong>Neutral</strong></td>
+                    <td>Flat, controlled</td>
+                    <td>Moderate + Stable + Low variance</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Dashboard Metrics -->
+        <h2>Dashboard Metrics & Analytics</h2>
+
+        <h3>Wellness Score (0-100)</h3>
+        <div class="highlight">
+            <strong>Formula:</strong> 50 + (positive_ratio - negative_ratio) × 50 + confidence_boost
+            <ul style="margin-top: 10px;">
+                <li>0-20: Low emotional well-being</li>
+                <li>21-40: Below average wellness</li>
+                <li>41-60: Moderate wellness</li>
+                <li>61-80: Good emotional health</li>
+                <li>81-100: Excellent emotional well-being</li>
+            </ul>
+        </div>
+
+        <h3>Emotional Intelligence Score</h3>
+        <p>Measures awareness of own emotions and ability to manage them. Based on emotion consistency, variety, and response patterns. Higher scores indicate better emotion regulation.</p>
+
+        <h3>Emotional Stability Index</h3>
+        <p>Measures consistency of emotions over time. Lower variance indicates higher stability and emotional resilience.</p>
+
+        <h3>Mood Forecast</h3>
+        <p>Predicts next 3-5 days of emotional trends based on historical patterns using machine learning algorithms. Helps with proactive emotional management.</p>
+
+        <div class="page-break"></div>
+
+        <!-- Database Schema -->
+        <h2>Database Models</h2>
+
+        <h3>User Model</h3>
+        <div class="code-block">{
+  _id: ObjectId,
+  username: String,
+  email: String,
+  passwordHash: String,
+  createdAt: Date,
+  updatedAt: Date
+}</div>
+
+        <h3>Emotion Model</h3>
+        <div class="code-block">{
+  _id: ObjectId,
+  userId: ObjectId,
+  emotion: String,           // happy, sad, angry, etc.
+  confidence: Number,        // 0-1 confidence score
+  type: String,             // 'face', 'voice', 'text'
+  timestamp: Date,
+  metadata: Object          // Additional info
+}</div>
+
+        <h3>EmotionFusion Model</h3>
+        <div class="code-block">{
+  _id: ObjectId,
+  userId: ObjectId,
+  faceEmotion: String,
+  voiceEmotion: String,
+  textEmotion: String,
+  fusedEmotion: String,
+  confidence: Number,
+  timestamp: Date
+}</div>
+
+        <!-- Key Improvements -->
+        <h2>Key Improvements & Solutions</h2>
+
+        <div class="success">
+            <h3>✓ Microphone Access Issues</h3>
+            <p>Implemented proper permission handling, Web Audio API with graceful fallbacks, and clear error messages for denied access.</p>
+        </div>
+
+        <div class="success">
+            <h3>✓ Face Detection Bias</h3>
+            <p>Removed neutral-defaulting logic, improved emotion mapping for sad/angry/disgusted, and implemented better confidence-based classification.</p>
+        </div>
+
+        <div class="success">
+            <h3>✓ Voice Emotion Accuracy</h3>
+            <p>Implemented feature extraction, improved happy vs angry differentiation, and added better feature normalization.</p>
+        </div>
+
+        <div class="success">
+            <h3>✓ UI/UX Consistency</h3>
+            <p>Unified color scheme across all pages, responsive sidebar navigation, professional card-based layouts, and consistent typography.</p>
+        </div>
+
+        <div class="success">
+            <h3>✓ Layout & Responsiveness</h3>
+            <p>Full-screen auth pages without sidebar, proper responsive breakpoints, fixed canvas rendering, and better mobile compatibility.</p>
+        </div>
+
+        <div class="success">
+            <h3>✓ Data Persistence</h3>
+            <p>Emotion history tracking, statistics aggregation, database-backed storage, and real-time updates.</p>
+        </div>
+
+        <!-- User Interface -->
+        <h2>User Interface & Design</h2>
+
+        <h3>Design System</h3>
+        <div class="grid-2">
+            <div class="grid-item">
+                <h4>Color Palette</h4>
+                <ul>
+                    <li>Primary: #667eea (Purple)</li>
+                    <li>Secondary: #764ba2 (Dark Purple)</li>
+                    <li>Background: #f5f7fa (Light Gray)</li>
+                    <li>Text: #333 (Dark Gray)</li>
+                </ul>
+            </div>
+            <div class="grid-item">
+                <h4>Typography</h4>
+                <ul>
+                    <li>Headers: Bold, gradient accents</li>
+                    <li>Body: 14-16px sans-serif</li>
+                    <li>Line Height: 1.5</li>
+                    <li>Letter Spacing: 0.5px labels</li>
+                </ul>
+            </div>
+        </div>
+
+        <h3>Components & Layouts</h3>
+        <ul>
+            <li><strong>Cards</strong>: Consistent white cards with subtle shadows and rounded corners (8-12px)</li>
+            <li><strong>Buttons</strong>: Gradient accents with hover effects and disabled states</li>
+            <li><strong>Grid Layouts</strong>: Responsive grid system for dashboard and module cards</li>
+            <li><strong>Sidebar</strong>: 220px optimal width with active state indicators</li>
+            <li><strong>Responsive</strong>: 3 breakpoints (desktop, tablet, mobile)</li>
+        </ul>
+
+        <!-- Responsive Design -->
+        <h2>Responsive Design Strategy</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Breakpoint</th>
+                    <th>Width</th>
+                    <th>Layout</th>
+                    <th>Features</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Desktop</td>
+                    <td>&gt; 1024px</td>
+                    <td>Multi-column</td>
+                    <td>Full sidebar, 2-column layouts, all features visible</td>
+                </tr>
+                <tr>
+                    <td>Tablet</td>
+                    <td>768-1024px</td>
+                    <td>Single column</td>
+                    <td>Adjusted padding, readable text, touch-friendly</td>
+                </tr>
+                <tr>
+                    <td>Mobile</td>
+                    <td>&lt; 768px</td>
+                    <td>Full-width stack</td>
+                    <td>Large touch targets, optimized spacing</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- API Endpoints -->
+        <h2>API Endpoints</h2>
+
+        <h3>Authentication</h3>
+        <ul>
+            <li><code>POST /auth/register</code> - Register new user</li>
+            <li><code>POST /auth/login</code> - Login user</li>
+            <li><code>GET /auth/profile</code> - Get user profile</li>
+        </ul>
+
+        <h3>Emotions</h3>
+        <ul>
+            <li><code>POST /emotions/save</code> - Save emotion record</li>
+            <li><code>GET /emotions/history</code> - Get emotion history</li>
+            <li><code>GET /emotions/stats</code> - Get emotion statistics</li>
+        </ul>
+
+        <h3>Analysis</h3>
+        <ul>
+            <li><code>POST /voice/analyze</code> - Analyze voice emotion</li>
+            <li><code>POST /text/analyze</code> - Analyze text emotion</li>
+            <li><code>POST /fusion/analyze</code> - Fuse multiple emotions</li>
+        </ul>
+
+        <!-- Project Statistics -->
+        <h2>Project Statistics</h2>
+
+        <table>
+            <tbody>
+                <tr>
+                    <td><strong>React Components</strong></td>
+                    <td>10+ components</td>
+                </tr>
+                <tr>
+                    <td><strong>API Endpoints</strong></td>
+                    <td>15+ endpoints</td>
+                </tr>
+                <tr>
+                    <td><strong>Database Collections</strong></td>
+                    <td>3+ models</td>
+                </tr>
+                <tr>
+                    <td><strong>Lines of Code</strong></td>
+                    <td>5000+ lines</td>
+                </tr>
+                <tr>
+                    <td><strong>Features Implemented</strong></td>
+                    <td>25+ major features</td>
+                </tr>
+                <tr>
+                    <td><strong>Emotion Classes</strong></td>
+                    <td>7 emotions</td>
+                </tr>
+                <tr>
+                    <td><strong>Detection Modalities</strong></td>
+                    <td>3 (face, voice, text)</td>
+                </tr>
+                <tr>
+                    <td><strong>Acoustic Features</strong></td>
+                    <td>10+ features</td>
+                </tr>
+                <tr>
+                    <td><strong>Responsive Breakpoints</strong></td>
+                    <td>3 breakpoints</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Conclusion -->
+        <h2>Conclusion</h2>
+        <p>AffectX represents a comprehensive solution for emotion intelligence and wellness monitoring. By combining multiple emotion detection modalities with AI-powered analytics and supportive chatbot features, it provides users with actionable insights into their emotional health.</p>
+
+        <p><strong>The system successfully addresses the problem statement by providing:</strong></p>
+        <ul class="feature-list">
+            <li>Multi-modal emotion detection (face, voice, text)</li>
+            <li>Historical data tracking and persistence</li>
+            <li>Intelligent AI-powered analytics</li>
+            <li>Personalized emotional support</li>
+            <li>Beautiful, intuitive user interface</li>
+            <li>Professional-grade implementation</li>
+        </ul>
+
+        <p>This makes AffectX a standout portfolio project, demonstrating expertise in:</p>
+        <ul>
+            <li>Full-stack web development (React, Node.js, Python)</li>
+            <li>Machine learning integration</li>
+            <li>Audio and image processing</li>
+            <li>Database design and management</li>
+            <li>User experience design</li>
+            <li>Responsive web development</li>
+        </ul>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p><strong>Project Name:</strong> AffectX - Emotion Intelligence Web Application</p>
+            <p><strong>Tech Stack:</strong> React 18, Node.js, Python, MongoDB, Docker</p>
+           
+        </div>
+    </div>
+</body>
+</html>
